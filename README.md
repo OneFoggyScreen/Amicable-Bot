@@ -7,8 +7,6 @@ This is was a project of mine that took around 1 month to get to this point. Aft
 - Simple Moderation:
 	- Purging
 	- Reaction Roles
-- Purging
-- Reaction Roles
 - Leveling
 - Simple Economy
 
