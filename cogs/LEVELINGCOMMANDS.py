@@ -34,7 +34,7 @@ class LevelCommands(commands.Cog):  #This is probably the stupidest code I've wr
             finals = finals + content
         await ctx.send(finals)
 
-    @commands.command()
+    @commands.command(aliases=["rank"])
     async def profile(self, ctx, *arg):
         with open('data/users.json', 'r') as f:
             users = json.load(f)
@@ -47,7 +47,7 @@ class LevelCommands(commands.Cog):  #This is probably the stupidest code I've wr
         try:
             level = users[str(ctx.guild.id)][str(user)]["level"]
             exe = users[str(ctx.guild.id)][str(user)]["exep"]
-            ProfileEmbed = TwoFieldEmbed("Here's " + str(self.client.get_user(int(user)).name) + "'s Profile:", (str(self.client.get_user(int(user)).name) + "'s Experience:", str(exe)), (str(self.client.get_user(int(user)).name) + "'s Level:", str(level)))
+            ProfileEmbed = TwoFieldEmbed("Here's " + str(self.client.get_user(int(user)).name) + "'s Profile:", (str(self.client.get_user(int(user)).name) + "'s Experience:", str(exe)), (str(self.client.get_user(int(user)).name) + "'s Level:", str(level)), i1=True, i2=True)
             ProfileEmbed.set_thumbnail(url="https://cdn.discordapp.com/avatars/" + str(user) + "/" + str(self.client.get_user(int(user)).avatar) + ".png?size=1024")
             await ctx.send(embed=ProfileEmbed)
         except:
